@@ -3,6 +3,7 @@ set nu
 
 " set no compatible and syntax
 set nocompatible
+syntax enable
 syntax on
 
 " set colorscheme 
@@ -56,3 +57,9 @@ let g:miniBufExplModSelTarget = 1
 
 " ##### man.vim #####
 source $VIMRUNTIME/ftplugin/man.vim
+
+" ##### tagbar.vim #####
+nnoremap <Leader>tl :TagbarToggle<CR>
+nnoremap <Leader>tb :TagbarToggle<CR>
+let tagbar_left = 1
+let tagbar_width = 25
