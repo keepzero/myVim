@@ -68,4 +68,4 @@ let tagbar_width = 25
 nnoremap <Leader>fl :NERDTreeToggle<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeWinSize = 25
-let NERTTreeWinPos = "right"
+let NERDTreeWinPos = "right"
