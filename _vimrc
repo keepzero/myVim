@@ -63,3 +63,9 @@ nnoremap <Leader>tl :TagbarToggle<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
 let tagbar_left = 1
 let tagbar_width = 25
+
+" ##### nerdtree.vim #####
+nnoremap <Leader>fl :NERDTreeToggle<CR>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+let NERDTreeWinSize = 25
+let NERTTreeWinPos = "right"
