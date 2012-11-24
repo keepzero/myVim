@@ -53,3 +53,6 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 " compatible with TagList 
 let g:miniBufExplModSelTarget = 1
+
+" ##### man.vim #####
+source $VIMRUNTIME/ftplugin/man.vim
