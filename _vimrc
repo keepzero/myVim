@@ -3,6 +3,7 @@ set nu
 
 " set no compatible and syntax
 set nocompatible
+syntax enable
 syntax on
 
 " set colorscheme 
@@ -53,3 +54,18 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 " compatible with TagList 
 let g:miniBufExplModSelTarget = 1
+
+" ##### man.vim #####
+source $VIMRUNTIME/ftplugin/man.vim
+
+" ##### tagbar.vim #####
+nnoremap <Leader>tl :TagbarToggle<CR>
+nnoremap <Leader>tb :TagbarToggle<CR>
+let tagbar_left = 1
+let tagbar_width = 25
+
+" ##### nerdtree.vim #####
+nnoremap <Leader>fl :NERDTreeToggle<CR>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+let NERDTreeWinSize = 25
+let NERDTreeWinPos = "right"
