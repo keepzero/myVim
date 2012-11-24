@@ -36,12 +36,14 @@ else
     set autoindent  "always set autoindenting on
 endif
 
-""all tabs to expand to four spaces
+" all tabs to expand to four spaces
 set expandtab
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 
+" <leader> key by default it's mapped to \
+let mapleader = ","
 
 " ##### minibufexpl.vim #####
 " <C-hjkl> minibuffer switch window
