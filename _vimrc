@@ -41,3 +41,13 @@ set expandtab
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
+
+
+" ##### minibufexpl.vim #####
+" <C-hjkl> minibuffer switch window
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1 
+" <C-TAB> and <C-S-TAB> switch buffer
+let g:miniBufExplMapCTabSwitchBufs = 1
+" compatible with TagList 
+let g:miniBufExplModSelTarget = 1
