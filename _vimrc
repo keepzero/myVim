@@ -167,6 +167,8 @@ let g:indent_guides_guide_size = 1
 nmap <Leader>ig :IndentGuidesToggle<CR>
 
 " ##### conque shell #####
-nmap <Leader>ct :ConqueTerm bash
-nmap <Leader>cvb :ConqueTermVSplit bash
-nmap <Leader>csb :ConqueTermSplit bash
+if(g:iswindows != 1)
+    nmap <Leader>ct :ConqueTerm bash
+    nmap <Leader>cvb :ConqueTermVSplit bash
+    nmap <Leader>csb :ConqueTermSplit bash
+endif
