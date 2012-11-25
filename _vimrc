@@ -43,6 +43,11 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 
+" code not fold default
+set foldmethod=syntax
+set foldlevel=100
+nnoremap <space> za
+
 " <leader> key by default it's mapped to \
 let mapleader = ","
 
