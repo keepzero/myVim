@@ -26,7 +26,7 @@ else
     let g:iswindows = 0
 endif
 
-" all tabs to expand to four spaces
+" all tabs to expand to four spaces for default
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -50,6 +50,19 @@ set laststatus=2
 set nu
 "set relativenumber
 set undofile
+
+" auto filetype detection
+if has("autocmd")
+    filetype on
+    filetype plugin on
+    filetype indent on
+    set completeopt=longest,menu
+
+    " Python no tab
+    autocmd FileType python setlocal et | setlocal sta | setlocal sw=4
+    autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
+
+endif
 
 " <leader> key by default it's mapped to \
 let mapleader = ","
@@ -121,19 +134,6 @@ function ClosePair(char)
     endif
 endf
 
-" autocmd
-if has("autocmd")
-    filetype on
-    filetype plugin on
-    filetype plugin indent on
-    filetype indent on
-    set completeopt=longest,menu
-
-    " Python no tab
-    autocmd FileType python setlocal et | setlocal sta | setlocal sw=4
-
-    "autocmd BufNewFile *.py 0r ~/.vim/mode.py
-endif
 
 " ##### minibufexpl.vim #####
 " <C-hjkl> minibuffer switch window
