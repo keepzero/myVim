@@ -144,3 +144,8 @@ let NERDTreeWinPos = "right"
 
 " ##### grep.vim #####
 nnoremap <Leader>sp :Grep -ir<CR>
+
+" ##### indent_guides.vim #####
+let g:indent_guides_start_level = 3
+let g:indent_guides_guide_size = 1
+nmap <Leader>ig :IndentGuidesToggle<CR>
