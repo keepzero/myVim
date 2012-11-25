@@ -1,9 +1,11 @@
-" set line number
-set nu
+" encoding and fileencodings
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 " set no vi compatible
 set nocompatible
 
+" set syntax
 syntax enable
 syntax on
 
@@ -29,11 +31,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" code not fold default
-set foldmethod=syntax
-set foldlevel=100
-nnoremap <space> za
-
 " few options just make things better
 set scrolloff=3
 set autoindent
@@ -51,6 +48,7 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+set nu
 "set relativenumber
 set undofile
 
@@ -98,6 +96,11 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap ; :
 
+" code not fold default
+set foldmethod=syntax
+set foldlevel=100
+nnoremap <space> za
+
 " shortcuts with Leader key
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <Leader>v V`]
@@ -138,9 +141,7 @@ endif
 " <C-hjkl> minibuffer switch window
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
-" <C-TAB> and <C-S-TAB> switch buffer
 let g:miniBufExplMapCTabSwitchBufs = 1
-" compatible with TagList
 let g:miniBufExplModSelTarget = 1
 
 " ##### man.vim #####
