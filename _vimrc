@@ -102,6 +102,22 @@ nnoremap ; :
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <Leader>v V`]
 nnoremap <Leader>w <C-w>v<C-w>l
+nnoremap <Leader>q :q<CR>
+
+" auto ClosePair
+inoremap ( ()<ESC>i
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap { {}<ESC>i
+inoremap } <c-r>=ClosePair('}')<CR>
+inoremap [ []<ESC>i
+inoremap ] <c-r>=ClosePair(']')<CR>
+function ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endf
 
 " autocmd
 if has("autocmd")
@@ -149,3 +165,8 @@ nnoremap <Leader>sp :Grep -ir<CR>
 let g:indent_guides_start_level = 3
 let g:indent_guides_guide_size = 1
 nmap <Leader>ig :IndentGuidesToggle<CR>
+
+" ##### conque shell #####
+nmap <Leader>cb :ConqueTerm bash
+nmap <Leader>cvb :ConqueTermVSplit bash
+nmap <Leader>csb :ConqueTermSplit bash
