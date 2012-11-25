@@ -43,6 +43,11 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 
+" code not fold default
+set foldmethod=syntax
+set foldlevel=100
+nnoremap <space> za
+
 " <leader> key by default it's mapped to \
 let mapleader = ","
 
@@ -69,3 +74,6 @@ nnoremap <Leader>fl :NERDTreeToggle<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeWinSize = 25
 let NERDTreeWinPos = "right"
+
+" ##### grep.vim #####
+nnoremap <Leader>sp :Grep -ir<CR>
