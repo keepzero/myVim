@@ -123,17 +123,16 @@ endf
 
 " autocmd
 if has("autocmd")
-    " autoload filetype plugin
+    filetype on
     filetype plugin on
-    " auto test filetype and load settings
     filetype plugin indent on
+    filetype indent on
+    set completeopt=longest,menu
 
     " Python no tab
     autocmd FileType python setlocal et | setlocal sta | setlocal sw=4
 
     "autocmd BufNewFile *.py 0r ~/.vim/mode.py
-else
-    set autoindent  "always set autoindenting on
 endif
 
 " ##### minibufexpl.vim #####
@@ -145,6 +144,7 @@ let g:miniBufExplModSelTarget = 1
 
 " ##### man.vim #####
 source $VIMRUNTIME/ftplugin/man.vim
+nmap <Leader>man :Man 3 <cword><CR>
 
 " ##### tagbar.vim #####
 nnoremap <Leader>tl :TagbarToggle<CR>
