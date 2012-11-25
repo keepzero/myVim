@@ -1,12 +1,13 @@
 " set line number
 set nu
 
-" set no compatible and syntax
+" set no vi compatible
 set nocompatible
+
 syntax enable
 syntax on
 
-" set colorscheme 
+" set colorscheme
 if has("gui_running")
     colorscheme lucius
 else
@@ -21,6 +22,86 @@ if (has("win32") || has("win64"))
 else
     let g:iswindows = 0
 endif
+
+" all tabs to expand to four spaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" code not fold default
+set foldmethod=syntax
+set foldlevel=100
+nnoremap <space> za
+
+" few options just make things better
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+"set visualbell
+set novisualbell
+set noerrorbells
+set vb t_vb=
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+"set relativenumber
+set undofile
+
+" <leader> key by default it's mapped to \
+let mapleader = ","
+
+" searching and moving
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+" handle long lines
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+
+" display invisible characters
+set list
+set listchars=tab:▸\ ",eol:¬
+
+" force to use hjkl
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+"nnoremap k gk
+
+" useful key map
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+nnoremap ; :
+
+" shortcuts with Leader key
+nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <Leader>v V`]
+nnoremap <Leader>w <C-w>v<C-w>l
 
 " autocmd
 if has("autocmd")
@@ -37,27 +118,13 @@ else
     set autoindent  "always set autoindenting on
 endif
 
-" all tabs to expand to four spaces
-set expandtab
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
-
-" code not fold default
-set foldmethod=syntax
-set foldlevel=100
-nnoremap <space> za
-
-" <leader> key by default it's mapped to \
-let mapleader = ","
-
 " ##### minibufexpl.vim #####
 " <C-hjkl> minibuffer switch window
 let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapWindowNavArrows = 1
 " <C-TAB> and <C-S-TAB> switch buffer
 let g:miniBufExplMapCTabSwitchBufs = 1
-" compatible with TagList 
+" compatible with TagList
 let g:miniBufExplModSelTarget = 1
 
 " ##### man.vim #####
