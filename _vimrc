@@ -74,3 +74,6 @@ nnoremap <Leader>fl :NERDTreeToggle<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeWinSize = 25
 let NERDTreeWinPos = "right"
+
+" ##### grep.vim #####
+nnoremap <Leader>sp :Grep -ir<CR>
