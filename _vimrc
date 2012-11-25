@@ -4,7 +4,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 " set no vi compatible
 set nocompatible
-set go=
+set guioptions=
 
 " set syntax
 syntax enable
@@ -40,10 +40,8 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-"set visualbell
-set novisualbell
 set noerrorbells
-set vb t_vb=
+"set vb t_vb=
 set cursorline
 set ttyfast
 set ruler
