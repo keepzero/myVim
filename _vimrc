@@ -68,6 +68,7 @@ endif
 let mapleader = ","
 
 " searching and moving
+set magic
 nnoremap / /\v
 vnoremap / /\v
 set ignorecase
