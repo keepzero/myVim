@@ -48,8 +48,6 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set nu
-"set relativenumber
-set undofile
 
 " auto filetype detection
 if has("autocmd")
@@ -85,7 +83,6 @@ vnoremap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
 
 " display invisible characters
 set list
