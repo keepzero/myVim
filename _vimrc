@@ -59,7 +59,6 @@ set undofile
 
 " auto filetype detection
 if has("autocmd")
-    set completeopt=longest,menu
 
     " Python no tab
     autocmd FileType python setlocal et sta sw=4 sts=4
@@ -138,6 +137,11 @@ function ClosePair(char)
     endif
 endf
 
+" ##### omni complete #####
+set completeopt=longest,menuone,preview
+inoremap <expr> <CR>        pumvisible()?"\<C-y>":"\<CR>"
+inoremap <expr> <PageDown>  pumvisible()?"\<PageDown>\<C-p>\<C-n>":"\<PageDown>"
+inoremap <expr> <PageUp>    pumvisible()?"\<PageUp>\<C-p>\<C-n>":"\<PageUp>"
 
 " ##### minibufexpl.vim #####
 " <C-hjkl> minibuffer switch window
