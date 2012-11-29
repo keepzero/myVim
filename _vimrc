@@ -196,3 +196,8 @@ if(g:iswindows != 1)
     nmap <Leader>cvb :ConqueTermVSplit bash
     nmap <Leader>csb :ConqueTermSplit bash
 endif
+
+" ##### bash-support #####
+let g:BASH_AuthorName   = 'KeepZero'
+let g:BASH_Email        = 'i@keepzero.net'
+let g:BASH_Company      = 'TripleZero'
