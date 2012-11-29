@@ -139,6 +139,7 @@ endf
 
 " ##### omni complete #####
 set completeopt=longest,menuone,preview
+set completeopt-=longest
 inoremap <expr> <CR>        pumvisible()?"\<C-y>":"\<CR>"
 inoremap <expr> <PageDown>  pumvisible()?"\<PageDown>\<C-p>\<C-n>":"\<PageDown>"
 inoremap <expr> <PageUp>    pumvisible()?"\<PageUp>\<C-p>\<C-n>":"\<PageUp>"
