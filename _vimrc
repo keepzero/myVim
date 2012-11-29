@@ -60,8 +60,8 @@ set undofile
 " auto filetype detection
 if has("autocmd")
 
-    " Python no tab
-    autocmd FileType python setlocal et sta sw=4 sts=4
+    " Python no tab and fold
+    autocmd FileType python setlocal et sta sw=4 sts=4 foldmethod=indent
     autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
 
 endif
