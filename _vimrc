@@ -10,6 +10,11 @@ set guioptions=
 syntax enable
 syntax on
 
+" set auto indent
+filetype on
+filetype plugin on
+filetype indent on
+
 " set colorscheme
 if has("gui_running")
     colorscheme lucius
@@ -27,14 +32,15 @@ else
 endif
 
 " all tabs to expand to four spaces for default
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+set autoindent          "ai     cident smartindent
+set tabstop=4           "ts
+set shiftwidth=4        "sw     space for every indent
+set expandtab           "et     expend tab to space
+set softtabstop=4       "sts    backspace back num space
+set nosmarttab          "sta
 
 " few options just make things better
 set scrolloff=3
-set autoindent
 set showmode
 set showcmd
 set hidden
@@ -53,13 +59,10 @@ set undofile
 
 " auto filetype detection
 if has("autocmd")
-    filetype on
-    filetype plugin on
-    filetype indent on
     set completeopt=longest,menu
 
     " Python no tab
-    autocmd FileType python setlocal et | setlocal sta | setlocal sw=4
+    autocmd FileType python setlocal et sta sw=4 sts=4
     autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
 
 endif
