@@ -23,12 +23,18 @@ else
     set guifont=Consolas:h10:cANSI
 endif
 
-" Windows specific
+" platform detection
+let g:iscygwin = 0
+let g:iswindows = 0
+let g:islinux = 0
+let g:ismac = 0
 if (has("win32") || has("win64"))
     let g:iswindows = 1
     set guifont=Consolas:h10:cANSI
+elseif has("win32unix")
+    let g:iscygwin = 1
 else
-    let g:iswindows = 0
+    let g:islinux = 1
 endif
 
 " all tabs to expand to four spaces for default
@@ -137,6 +143,30 @@ function ClosePair(char)
     endif
 endf
 
+" auto fcitx
+if(g:islinux == 1)
+    let g:input_toggle = 1
+    function! Fcitx2en()
+       let s:input_status = system("fcitx-remote")
+       if s:input_status == 2
+          let g:input_toggle = 1
+          let l:a = system("fcitx-remote -c")
+       endif
+    endfunction
+
+    function! Fcitx2zh()
+       let s:input_status = system("fcitx-remote")
+       if s:input_status != 2 && g:input_toggle == 1
+          let l:a = system("fcitx-remote -o")
+          let g:input_toggle = 0
+       endif
+    endfunction
+
+    set timeoutlen=260
+    autocmd InsertLeave * call Fcitx2en()
+    autocmd InsertEnter * call Fcitx2zh()
+endif
+
 " ##### omni complete #####
 set completeopt=longest,menuone,preview
 inoremap <expr> <CR>        pumvisible()?"\<C-y>":"\<CR>"
@@ -175,7 +205,7 @@ let g:indent_guides_guide_size = 1
 nmap <Leader>ig :IndentGuidesToggle<CR>
 
 " ##### conque shell #####
-if(g:iswindows != 1)
+if(g:islinux == 1)
     nmap <Leader>ct :ConqueTerm bash
     nmap <Leader>cvb :ConqueTermVSplit bash
     nmap <Leader>csb :ConqueTermSplit bash
