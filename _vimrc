@@ -66,8 +66,8 @@ set undofile
 " auto filetype detection
 if has("autocmd")
 
-    " Python no tab
-    autocmd FileType python setlocal et sta sw=4 sts=4
+    " Python no tab and fold
+    autocmd FileType python setlocal et sta sw=4 sts=4 foldmethod=indent
     autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
 
 endif
@@ -167,8 +167,24 @@ if(g:islinux == 1)
     autocmd InsertEnter * call Fcitx2zh()
 endif
 
+" remember previous position
+" Tell vim to remember certain things when we exit
+" '10  :  marks will be remembered for up to 10 previously edited files
+" "100 :  will save up to 100 lines for each register
+" :20  :  up to 20 lines of command-line history will be remembered
+" %    :  saves and restores the buffer list
+" n... :  where to save the viminfo files
+if(g:iswindows != 1)
+    set viminfo='10,\"100,:20,%,n~/.viminfo
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+endif
+
 " ##### omni complete #####
 set completeopt=longest,menuone,preview
+set completeopt-=longest
 inoremap <expr> <CR>        pumvisible()?"\<C-y>":"\<CR>"
 inoremap <expr> <PageDown>  pumvisible()?"\<PageDown>\<C-p>\<C-n>":"\<PageDown>"
 inoremap <expr> <PageUp>    pumvisible()?"\<PageUp>\<C-p>\<C-n>":"\<PageUp>"
@@ -210,3 +226,8 @@ if(g:islinux == 1)
     nmap <Leader>cvb :ConqueTermVSplit bash
     nmap <Leader>csb :ConqueTermSplit bash
 endif
+
+" ##### bash-support #####
+let g:BASH_AuthorName   = 'KeepZero'
+let g:BASH_Email        = 'i@keepzero.net'
+let g:BASH_Company      = 'TripleZero'
