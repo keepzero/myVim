@@ -22,6 +22,7 @@ else
     colorscheme desert
     set guifont=Consolas:h10:cANSI
 endif
+let t_Co=256
 
 " platform detection
 let g:iscygwin = 0
@@ -64,13 +65,18 @@ set nu
 set undofile
 
 " auto filetype detection
-if has("autocmd")
+autocmd FileType python setlocal et sta sw=4 sts=4 foldmethod=indent
+autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
+"autocmd FileType python set tabstop=4 shiftwidth=4 expandtab omnifunc=pythoncomplete#Complete
+"autocmd FileType c set tabstop=2 shiftwidth=2 expandtab omnifunc=ccomplete#Complete
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
-    " Python no tab and fold
-    autocmd FileType python setlocal et sta sw=4 sts=4 foldmethod=indent
-    autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
-
-endif
+" au BufRead
+au BufRead,BufNewFile */etc/nginx/* set ft=nginx
+au BufRead,BufNewFile */etc/init.d/* set ft=sh
 
 " <leader> key by default it's mapped to \
 let mapleader = ","
@@ -162,9 +168,9 @@ if(g:islinux == 1)
        endif
     endfunction
 
-    set timeoutlen=260
-    autocmd InsertLeave * call Fcitx2en()
-    autocmd InsertEnter * call Fcitx2zh()
+    "set timeoutlen=260
+    "autocmd InsertLeave * call Fcitx2en()
+    "autocmd InsertEnter * call Fcitx2zh()
 endif
 
 " remember previous position
@@ -231,3 +237,7 @@ endif
 let g:BASH_AuthorName   = 'KeepZero'
 let g:BASH_Email        = 'i@keepzero.net'
 let g:BASH_Company      = 'TripleZero'
+
+" ##### powerline #####
+let g:Powerline_symbols = 'unicode'
+"let g:Powerline_colorscheme = 'skwp'
