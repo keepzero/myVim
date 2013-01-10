@@ -16,11 +16,15 @@ filetype plugin on
 filetype indent on
 
 " set colorscheme
+colorscheme molokai
 if has("gui_running")
-    colorscheme lucius
+    " colorscheme lucius
+    colorscheme molokai
+    " set guifont=Consola:h10:cANSI
+    " set guifont=Inconsolata
+    " set guifont="WenQuanYi Micro Hei Mono"
 else
-    colorscheme desert
-    set guifont=Consolas:h10:cANSI
+    colorscheme lucius
 endif
 let t_Co=256
 
@@ -110,10 +114,10 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 nnoremap j gj
 "nnoremap k gk
 
@@ -133,6 +137,7 @@ nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <Leader>v V`]
 nnoremap <Leader>w <C-w>v<C-w>l
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>md :w !Markdown.pl > %.html<CR><CR>
 
 " auto ClosePair
 inoremap ( ()<ESC>i
