@@ -242,3 +242,6 @@ endif
 let g:BASH_AuthorName   = 'KeepZero'
 let g:BASH_Email        = 'i@keepzero.net'
 let g:BASH_Company      = 'TripleZero'
+
+" ##### new Powerline #####
+"python from powerline.ext.vim import source_plugin; source_plugin()
