@@ -24,7 +24,7 @@ if has("gui_running")
     " set guifont=Inconsolata
     " set guifont="WenQuanYi Micro Hei Mono"
 else
-    colorscheme lucius
+    colorscheme molokai
 endif
 let t_Co=256
 
@@ -242,7 +242,3 @@ endif
 let g:BASH_AuthorName   = 'KeepZero'
 let g:BASH_Email        = 'i@keepzero.net'
 let g:BASH_Company      = 'TripleZero'
-
-" ##### powerline #####
-let g:Powerline_symbols = 'unicode'
-"let g:Powerline_colorscheme = 'skwp'
