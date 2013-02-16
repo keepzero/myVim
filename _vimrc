@@ -66,7 +66,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set nu
 "set relativenumber
-set undofile
+"set undofile
 
 " auto filetype detection
 autocmd FileType python setlocal et sta sw=4 sts=4 foldmethod=indent
