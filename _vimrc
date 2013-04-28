@@ -24,8 +24,9 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'jimenezrick/vimerl'
+Bundle 'jonathanfilip/vim-lucius'
+Bundle 'kevinw/pyflakes-vim'
 " vim-scripts repos
-"Bundle 'L9'
 "Bundle 'FuzzyFinder'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -41,6 +42,7 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+" STEP: git submodule init; git submodule update
 
 " set encodings
 set encoding=utf-8
@@ -56,6 +58,7 @@ syntax on
 " set colorscheme
 let t_Co=256
 colorscheme lucius
+LuciusBlackLowContrast
 
 " few options just make things better
 set scrolloff=3
