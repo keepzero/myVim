@@ -1,8 +1,6 @@
 Plugins:
-    man.vim plugin
-    Ident Guides plugin
-    ConqueTerm plugin
-    pyflakes plugin
+    *man.vim plugin
+    -ConqueTerm plugin
 
 Fonts:
     for gvim

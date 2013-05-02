@@ -27,7 +27,7 @@ Bundle 'jimenezrick/vimerl'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'kevinw/pyflakes-vim'
 " vim-scripts repos
-"Bundle 'FuzzyFinder'
+Bundle 'Indent-Guides'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -199,3 +199,18 @@ let NERDTreeWinPos = "right"
 
 " ##### grep.vim #####
 nnoremap <Leader>sp :Grep -ir<CR>
+
+" ##### indent_guides.vim #####
+let g:indent_guides_start_level = 3
+let g:indent_guides_guide_size = 1
+nmap <Leader>ig :IndentGuidesToggle<CR>
+map <Leader>ch :call SetColorColumn()<CR>
+function! SetColorColumn()
+    let col_num = virtcol(".")
+    let cc_list = split(&cc, ',')
+    if count(cc_list, string(col_num)) <= 0
+        execute "set cc+=".col_num
+    else
+        execute "set cc-=".col_num
+    endif
+endfunction
