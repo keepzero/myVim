@@ -177,6 +177,10 @@ inoremap <expr> <CR>        pumvisible()?"\<C-y>":"\<CR>"
 inoremap <expr> <PageDown>  pumvisible()?"\<PageDown>\<C-p>\<C-n>":"\<PageDown>"
 inoremap <expr> <PageUp>    pumvisible()?"\<PageUp>\<C-p>\<C-n>":"\<PageUp>"
 
+" man.vim
+source $VIMRUNTIME/ftplugin/man.vim
+nmap <Leader>man :Man 3 <cword><CR>
+
 " Bundle plugin config
 
 " ##### minibufexpl.vim #####

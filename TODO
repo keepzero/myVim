@@ -1,6 +1,0 @@
-Plugins:
-    *man.vim plugin
-    -ConqueTerm plugin
-
-Fonts:
-    for gvim
