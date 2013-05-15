@@ -82,26 +82,28 @@ set undofile
 
 " all tabs to expand to four spaces
 set autoindent          "ai     cident smartindent
-set tabstop=4           "ts
-set shiftwidth=4        "sw     space for every indent
-set expandtab           "et     expend tab to space
-set softtabstop=4       "sts    backspace back num space
+"set tabstop=4           "ts
+"set shiftwidth=4        "sw     space for every indent
+"set expandtab           "et     expend tab to space
+"set softtabstop=4       "sts    backspace back num space
 set nosmarttab          "sta
 
-" auto filetype detection
-autocmd FileType python setlocal et sta sw=4 sts=4 foldmethod=indent
-"autocmd FileType python set tabstop=4 shiftwidth=4 expandtab omnifunc=pythoncomplete#Complete
-"autocmd FileType c set tabstop=2 shiftwidth=2 expandtab omnifunc=ccomplete#Complete
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+" auto language indent
+autocmd FileType python,erlang,java set ts=4 sw=4 et sts=4
+autocmd FileType c,cpp set tabstop=8 shiftwidth=8 noexpandtab sts=8
+autocmd FileType php,go set tabstop=4 shiftwidth=4 noexpandtab sts=4
+autocmd FileType html,javascript,yaml,css set shiftwidth=2 tabstop=2
+autocmd FileType text set ts=8 sts=8
+
+" code template
 autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
 autocmd BufNewFile *.php 0r ~/.vim/mode/mode.php
-autocmd BufNewFile,BufRead *.json set ft=javascript
 
-" au BufRead
-au BufRead,BufNewFile */etc/nginx/* set ft=nginx
-au BufRead,BufNewFile */etc/init.d/* set ft=sh
+" autocmd filetype
+autocmd BufRead,BufNewFile *.json set ft=javascript
+autocmd BufRead,BufNewFile */etc/nginx/* set ft=nginx
+autocmd BufRead,BufNewFile */etc/init.d/* set ft=sh
+autocmd BufRead,BufNewFile *.conf setlocal ts=4 sw=4 et sts=4
 
 " <leader> key by default it's mapped to \
 let mapleader = ","
