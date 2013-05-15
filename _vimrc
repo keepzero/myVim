@@ -26,6 +26,7 @@ Bundle 'edsono/vim-matchit'
 Bundle 'jimenezrick/vimerl'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'kevinw/pyflakes-vim'
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
 " vim-scripts repos
 Bundle 'Indent-Guides'
 " non github repos
@@ -126,8 +127,8 @@ set formatoptions=qrn1
 set colorcolumn=85
 
 " display invisible characters
-set list
-set listchars=tab:▸\ ",eol:¬
+set listchars=tab:▸\ ,eol:¬
+nnoremap <leader><tab> :set list<cr>
 
 " force to use hjkl
 nnoremap <up> <nop>
