@@ -89,7 +89,7 @@ set autoindent          "ai     cident smartindent
 set nosmarttab          "sta
 
 " auto language indent
-autocmd FileType python,erlang,java set ts=4 sw=4 et sts=4
+autocmd FileType python,erlang,java,sh set ts=4 sw=4 et sts=4
 autocmd FileType c,cpp set tabstop=8 shiftwidth=8 noexpandtab sts=8
 autocmd FileType php,go set tabstop=4 shiftwidth=4 noexpandtab sts=4
 autocmd FileType html,javascript,yaml,css set shiftwidth=2 tabstop=2
