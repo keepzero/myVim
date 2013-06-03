@@ -28,6 +28,7 @@ Bundle 'jonathanfilip/vim-lucius'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
+Bundle 'jiangmiao/auto-pairs.git'
 " vim-scripts repos
 Bundle 'Indent-Guides'
 " non github repos
@@ -166,21 +167,6 @@ nnoremap <Leader>v V`]
 nnoremap <Leader>w <C-w>v<C-w>l
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>md :w !Markdown.pl > %.html<CR><CR>
-
-" auto ClosePair
-inoremap ( ()<ESC>i
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap { {}<ESC>i
-inoremap } <c-r>=ClosePair('}')<CR>
-inoremap [ []<ESC>i
-inoremap ] <c-r>=ClosePair(']')<CR>
-function ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-        return "\<Right>"
-    else
-        return a:char
-    endif
-endf
 
 " omni complete
 set completeopt=longest,menuone,preview
