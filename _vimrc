@@ -26,6 +26,7 @@ Bundle 'edsono/vim-matchit'
 Bundle 'jimenezrick/vimerl'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'kevinw/pyflakes-vim'
+Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 " vim-scripts repos
 Bundle 'Indent-Guides'
