@@ -222,4 +222,14 @@ function! SetColorColumn()
 endfunction
 
 " ##### LookupFile #####
-let g:LookupFile_TagExpr = '"./filenametags"' 
+let g:LookupFile_MinPatLength = 2               "At least 2 char to start search
+let g:LookupFile_PreserveLastPattern = 0        "Don't preserve last search
+let g:LookupFile_PreservePatternHistory = 1     "Save search history
+let g:LookupFile_AlwaysAcceptFirst = 1          "Enter match the first file
+let g:LookupFile_AllowNewFiles = 0              "not allow create new file if not match
+if filereadable("./filenametags")               "tag file name
+    let g:LookupFile_TagExpr = '"./filenametags"'
+endif
+nnoremap <Leader>lf :LookupFile<CR>
+nnoremap <Leader>lb :LUBufs<CR>
+nnoremap <Leader>lw :LUWalk<CR>
