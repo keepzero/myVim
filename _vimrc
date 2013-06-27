@@ -153,7 +153,7 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-w> <Esc>dbcl
 inoremap <C-u> <Esc>d0cl
-"inoremap <C-k> <Esc>hC
+inoremap <C-k> <Esc>lC
 inoremap <C-d> <Esc>ls
 
 " code not fold default
