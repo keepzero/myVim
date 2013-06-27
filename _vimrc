@@ -176,8 +176,9 @@ nnoremap <Leader>md :w !Markdown.pl > %.html<CR><CR>
 set completeopt=longest,menuone,preview
 set completeopt-=longest
 inoremap <expr> <CR>        pumvisible()?"\<C-y>":"\<CR>"
-inoremap <expr> <PageDown>  pumvisible()?"\<PageDown>\<C-p>\<C-n>":"\<PageDown>"
-inoremap <expr> <PageUp>    pumvisible()?"\<PageUp>\<C-p>\<C-n>":"\<PageUp>"
+inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
+inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
+inoremap <expr> <C-U>      pumvisible()?"\<C-E>":"\<C-U>" 
 
 " man.vim
 source $VIMRUNTIME/ftplugin/man.vim
@@ -227,9 +228,7 @@ let g:LookupFile_PreserveLastPattern = 0        "Don't preserve last search
 let g:LookupFile_PreservePatternHistory = 1     "Save search history
 let g:LookupFile_AlwaysAcceptFirst = 1          "Enter match the first file
 let g:LookupFile_AllowNewFiles = 0              "not allow create new file if not match
-if filereadable("./filenametags")               "tag file name
-    let g:LookupFile_TagExpr = '"./filenametags"'
-endif
+let g:LookupFile_TagExpr = '"./filenametags"'
 nnoremap <Leader>lf :LookupFile<CR>
 nnoremap <Leader>lb :LUBufs<CR>
 nnoremap <Leader>lw :LUWalk<CR>
