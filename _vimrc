@@ -10,9 +10,9 @@ Bundle 'gmarik/vundle'
 " Bundles here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -21,7 +21,6 @@ Bundle "tomtom/tlib_vim"
 Bundle "honza/vim-snippets"
 Bundle 'garbas/vim-snipmate'
 Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/grep.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'jimenezrick/vimerl'
 Bundle 'jonathanfilip/vim-lucius'
@@ -31,6 +30,10 @@ Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'jiangmiao/auto-pairs.git'
 " vim-scripts repos
 Bundle 'Indent-Guides'
+Bundle 'grep.vim'
+Bundle "genutils"
+Bundle 'lookupfile'
+Bundle 'tagbar-phpctags'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -52,7 +55,8 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 " gui settings
-set guioptions=menu
+"set guioptions=menu
+set guioptions=
 
 " set syntax
 syntax enable
@@ -216,3 +220,6 @@ function! SetColorColumn()
         execute "set cc-=".col_num
     endif
 endfunction
+
+" ##### LookupFile #####
+let g:LookupFile_TagExpr = '"./filenametags"' 
