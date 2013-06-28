@@ -95,6 +95,11 @@ set autoindent          "ai     cident smartindent
 "set softtabstop=4       "sts    backspace back num space
 set nosmarttab          "sta
 
+" code not fold default
+set foldmethod=syntax
+set foldlevel=100
+nnoremap <space> za
+
 " auto language indent
 autocmd FileType python,erlang,java,sh set ts=4 sw=4 et sts=4
 autocmd FileType c,cpp set tabstop=8 shiftwidth=8 noexpandtab sts=8
@@ -161,11 +166,6 @@ inoremap <C-w> <Esc>dbcl
 inoremap <C-u> <Esc>d0cl
 inoremap <C-k> <Esc>lC
 inoremap <C-d> <Esc>ls
-
-" code not fold default
-set foldmethod=syntax
-set foldlevel=100
-nnoremap <space> za
 
 " shortcuts with Leader key
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
