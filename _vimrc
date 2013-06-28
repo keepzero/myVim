@@ -104,6 +104,7 @@ autocmd FileType text set ts=8 sts=8
 " code template
 autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
 autocmd BufNewFile *.php 0r ~/.vim/mode/mode.php
+autocmd BufNewFile *.sh 0r ~/.vim/mode/mode.sh
 
 " autocmd filetype
 autocmd BufRead,BufNewFile *.json set ft=javascript
@@ -175,7 +176,7 @@ nnoremap <Leader>md :w !Markdown.pl > %.html<CR><CR>
 " omni complete
 set completeopt=longest,menuone,preview
 set completeopt-=longest
-inoremap <expr> <CR>        pumvisible()?"\<C-y>":"\<CR>"
+inoremap <expr> <CR>       pumvisible()?"\<C-y>":"\<CR>"
 inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
 inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
 inoremap <expr> <C-U>      pumvisible()?"\<C-E>":"\<C-U>" 
