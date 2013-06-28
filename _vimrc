@@ -34,6 +34,7 @@ Bundle 'grep.vim'
 Bundle "genutils"
 Bundle 'lookupfile'
 Bundle 'tagbar-phpctags'
+Bundle 'Marks-Browser'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -233,3 +234,7 @@ let g:LookupFile_TagExpr = '"./filenametags"'
 nnoremap <Leader>lf :LookupFile<CR>
 nnoremap <Leader>lb :LUBufs<CR>
 nnoremap <Leader>lw :LUWalk<CR>
+
+" ##### Marks Browser #####
+let marksCloseWhenSelected = 1
+nnoremap <Leader>mb :MarksBrowser<CR>
