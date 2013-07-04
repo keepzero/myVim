@@ -28,6 +28,7 @@ Bundle 'kevinw/pyflakes-vim'
 Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'jiangmiao/auto-pairs.git'
+Bundle 'terryma/vim-multiple-cursors'
 " vim-scripts repos
 Bundle 'Indent-Guides'
 Bundle 'grep.vim'
@@ -96,7 +97,7 @@ set autoindent          "ai     cident smartindent
 set nosmarttab          "sta
 
 " code not fold default
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevel=100
 nnoremap <space> za
 
@@ -176,7 +177,7 @@ nnoremap <Leader>md :w !Markdown.pl > %.html<CR><CR>
 
 " omni complete
 set completeopt=longest,menuone,preview
-set completeopt-=longest
+"set completeopt-=longest
 inoremap <expr> <CR>       pumvisible()?"\<C-y>":"\<CR>"
 inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
 inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
