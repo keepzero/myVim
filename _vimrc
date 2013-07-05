@@ -24,6 +24,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'edsono/vim-matchit'
 Bundle 'jimenezrick/vimerl'
 Bundle 'jonathanfilip/vim-lucius'
+Bundle 'tomasr/molokai'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
@@ -104,13 +105,18 @@ nnoremap <space> za
 " auto language indent
 autocmd FileType python,erlang,java,sh set ts=4 sw=4 et sts=4
 autocmd FileType c,cpp set tabstop=8 shiftwidth=8 noexpandtab sts=8
-autocmd FileType php,go set tabstop=4 shiftwidth=4 noexpandtab sts=4
-autocmd FileType html,javascript,yaml,css set shiftwidth=2 tabstop=2
+autocmd FileType go set tabstop=4 shiftwidth=4 noexpandtab sts=4
+autocmd FileType html,javascript,yaml,css set tabstop=2 shiftwidth=2 expandtab sts=2
 autocmd FileType text set ts=8 sts=8
+
+" php doc
+set runtimepath+=$HOME/.vim/doc/phpdoc
+autocmd FileType php set tabstop=4 shiftwidth=4 noexpandtab sts=4
+autocmd BufNewFile,BufRead *.ros,*.inc,*.php set keywordprg="help"
+autocmd BufNewFile *.php 0r ~/.vim/mode/mode.php
 
 " code template
 autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
-autocmd BufNewFile *.php 0r ~/.vim/mode/mode.php
 autocmd BufNewFile *.sh 0r ~/.vim/mode/mode.sh
 
 " autocmd filetype
@@ -174,6 +180,9 @@ nnoremap <Leader>v V`]
 nnoremap <Leader>w <C-w>v<C-w>l
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>md :w !Markdown.pl > %.html<CR><CR>
+
+nnoremap <C-w>- <C-w>s<C-w>j
+nnoremap <C-w>\| <C-w>v<C-w>l
 
 " omni complete
 set completeopt=longest,menuone,preview
