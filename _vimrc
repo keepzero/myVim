@@ -30,6 +30,8 @@ Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'jiangmiao/auto-pairs.git'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'AndrewRadev/splitjoin.vim'
+"
 " vim-scripts repos
 Bundle 'Indent-Guides'
 Bundle 'grep.vim'
@@ -37,6 +39,7 @@ Bundle "genutils"
 Bundle 'lookupfile'
 Bundle 'tagbar-phpctags'
 Bundle 'Marks-Browser'
+"
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -186,7 +189,7 @@ nnoremap <C-w>\| <C-w>v<C-w>l
 
 " omni complete
 set completeopt=longest,menuone,preview
-"set completeopt-=longest
+set completeopt-=longest
 inoremap <expr> <CR>       pumvisible()?"\<C-y>":"\<CR>"
 inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
 inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
@@ -208,12 +211,12 @@ let g:miniBufExplModSelTarget = 1
 nnoremap <Leader>tl :TagbarToggle<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
 let tagbar_left = 1
-let tagbar_width = 25
+let tagbar_width = 30
 
 " ##### nerdtree.vim #####
 nnoremap <Leader>fl :NERDTreeToggle<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
-let NERDTreeWinSize = 25
+let NERDTreeWinSize = 30
 let NERDTreeWinPos = "right"
 
 " ##### grep.vim #####
