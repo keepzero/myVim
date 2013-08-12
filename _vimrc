@@ -22,15 +22,15 @@ Bundle "honza/vim-snippets"
 Bundle 'garbas/vim-snipmate'
 Bundle 'majutsushi/tagbar'
 Bundle 'edsono/vim-matchit'
-Bundle 'jimenezrick/vimerl'
+"Bundle 'jimenezrick/vimerl'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'tomasr/molokai'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'jiangmiao/auto-pairs.git'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'AndrewRadev/splitjoin.vim'
+"Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'AndrewRadev/splitjoin.vim'
 "
 " vim-scripts repos
 Bundle 'Indent-Guides'
@@ -184,8 +184,13 @@ nnoremap <Leader>w <C-w>v<C-w>l
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>md :w !Markdown.pl > %.html<CR><CR>
 
+" split window shortcut
 nnoremap <C-w>- <C-w>s<C-w>j
 nnoremap <C-w>\| <C-w>v<C-w>l
+noremap <C-J>     <C-W>j
+noremap <C-K>     <C-W>k
+noremap <C-H>     <C-W>h
+noremap <C-L>     <C-W>l
 
 " omni complete
 set completeopt=longest,menuone,preview
@@ -202,10 +207,8 @@ nmap <Leader>man :Man 3 <cword><CR>
 " Bundle plugin config
 
 " ##### minibufexpl.vim #####
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+noremap <C-TAB>   :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
 
 " ##### tagbar.vim #####
 nnoremap <Leader>tl :TagbarToggle<CR>
