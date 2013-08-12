@@ -22,14 +22,16 @@ Bundle "honza/vim-snippets"
 Bundle 'garbas/vim-snipmate'
 Bundle 'majutsushi/tagbar'
 Bundle 'edsono/vim-matchit'
-Bundle 'jimenezrick/vimerl'
+"Bundle 'jimenezrick/vimerl'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'tomasr/molokai'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'jiangmiao/auto-pairs.git'
-Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'AndrewRadev/splitjoin.vim'
+"
 " vim-scripts repos
 Bundle 'Indent-Guides'
 Bundle 'grep.vim'
@@ -37,6 +39,7 @@ Bundle "genutils"
 Bundle 'lookupfile'
 Bundle 'tagbar-phpctags'
 Bundle 'Marks-Browser'
+"
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -115,6 +118,9 @@ autocmd FileType php set tabstop=4 shiftwidth=4 noexpandtab sts=4
 autocmd BufNewFile,BufRead *.ros,*.inc,*.php set keywordprg="help"
 autocmd BufNewFile *.php 0r ~/.vim/mode/mode.php
 
+" go-lang
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
 " code template
 autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
 autocmd BufNewFile *.sh 0r ~/.vim/mode/mode.sh
@@ -181,12 +187,17 @@ nnoremap <Leader>w <C-w>v<C-w>l
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>md :w !Markdown.pl > %.html<CR><CR>
 
+" split window shortcut
 nnoremap <C-w>- <C-w>s<C-w>j
 nnoremap <C-w>\| <C-w>v<C-w>l
+noremap <C-J>     <C-W>j
+noremap <C-K>     <C-W>k
+noremap <C-H>     <C-W>h
+noremap <C-L>     <C-W>l
 
 " omni complete
 set completeopt=longest,menuone,preview
-"set completeopt-=longest
+set completeopt-=longest
 inoremap <expr> <CR>       pumvisible()?"\<C-y>":"\<CR>"
 inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
 inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
@@ -199,21 +210,46 @@ nmap <Leader>man :Man 3 <cword><CR>
 " Bundle plugin config
 
 " ##### minibufexpl.vim #####
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+noremap <C-TAB>   :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
 
 " ##### tagbar.vim #####
 nnoremap <Leader>tl :TagbarToggle<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
 let tagbar_left = 1
-let tagbar_width = 25
+let tagbar_width = 30
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
 
 " ##### nerdtree.vim #####
 nnoremap <Leader>fl :NERDTreeToggle<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
-let NERDTreeWinSize = 25
+let NERDTreeWinSize = 30
 let NERDTreeWinPos = "right"
 
 " ##### grep.vim #####
