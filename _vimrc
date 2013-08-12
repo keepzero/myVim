@@ -118,6 +118,9 @@ autocmd FileType php set tabstop=4 shiftwidth=4 noexpandtab sts=4
 autocmd BufNewFile,BufRead *.ros,*.inc,*.php set keywordprg="help"
 autocmd BufNewFile *.php 0r ~/.vim/mode/mode.php
 
+" go-lang
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
 " code template
 autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
 autocmd BufNewFile *.sh 0r ~/.vim/mode/mode.sh
