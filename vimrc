@@ -60,6 +60,9 @@ filetype plugin indent on     " required!
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
+" <leader> key by default it's mapped to \
+let mapleader = ","
+
 " gui settings
 "set guioptions=menu
 set guioptions=
@@ -130,9 +133,6 @@ autocmd BufRead,BufNewFile *.json set ft=javascript
 autocmd BufRead,BufNewFile */etc/nginx/* set ft=nginx
 autocmd BufRead,BufNewFile */etc/init.d/* set ft=sh
 autocmd BufRead,BufNewFile *.conf setlocal ts=4 sw=4 et sts=4
-
-" <leader> key by default it's mapped to \
-let mapleader = ","
 
 " searching and moving
 set magic
