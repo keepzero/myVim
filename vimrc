@@ -17,23 +17,21 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
 Plugin 'honza/vim-snippets'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Plugin 'majutsushi/tagbar'
 Plugin 'edsono/vim-matchit'
-"Plugin 'jimenezrick/vimerl'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'tomasr/molokai'
-Plugin 'kevinw/pyflakes-vim'
-Plugin 'jnwhiteh/vim-golang.git'
-Plugin 'dgryski/vim-godef'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'jiangmiao/auto-pairs.git'
 Plugin 'kien/ctrlp.vim'
 "Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'AndrewRadev/splitjoin.vim'
+"
+" langs
+"Plugin 'jimenezrick/vimerl'
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'fatih/vim-go'
+Plugin 'dgryski/vim-godef'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 "
 " vim-scripts repos
 Plugin 'Indent-Guides'
@@ -41,6 +39,10 @@ Plugin 'grep.vim'
 Plugin 'genutils'
 Plugin 'tagbar-phpctags'
 Plugin 'Marks-Browser'
+"
+" colorschemes
+Plugin 'jonathanfilip/vim-lucius'
+Plugin 'tomasr/molokai'
 "
 " non github repos
 "Plugin 'git://git.wincent.com/command-t.git'
@@ -130,9 +132,6 @@ set runtimepath+=$HOME/.vim/doc/phpdoc
 autocmd FileType php set tabstop=4 shiftwidth=4 noexpandtab sts=4
 autocmd BufNewFile,BufRead *.ros,*.inc,*.php set keywordprg="help"
 autocmd BufNewFile *.php 0r ~/.vim/mode/mode.php
-
-" go-lang
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " code template
 autocmd BufNewFile *.py 0r ~/.vim/mode/mode.py
@@ -227,7 +226,7 @@ noremap <C-S-TAB> :MBEbp<CR>
 nnoremap <Leader>tl :TagbarToggle<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
 let tagbar_left = 1
-let tagbar_width = 30
+let tagbar_width = 35
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
@@ -259,7 +258,7 @@ let g:tagbar_type_go = {
 " ##### nerdtree.vim #####
 nnoremap <Leader>fl :NERDTreeToggle<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
-let NERDTreeWinSize = 30
+let NERDTreeWinSize = 35
 let NERDTreeWinPos = "right"
 
 " ##### grep.vim #####
@@ -290,3 +289,7 @@ let g:godef_same_file_in_same_window = 1
 " ##### CtrlP #####
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" ##### vim-go #####
+let g:go_fmt_command = "goimports"
+let g:go_snippet_engine = "snipmate"
