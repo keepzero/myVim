@@ -1,60 +1,66 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-" Bundles here:
+" Plugins here:
 "
 " original repos on github
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
-Bundle 'garbas/vim-snipmate'
-Bundle 'majutsushi/tagbar'
-Bundle 'edsono/vim-matchit'
-"Bundle 'jimenezrick/vimerl'
-Bundle 'jonathanfilip/vim-lucius'
-Bundle 'tomasr/molokai'
-Bundle 'kevinw/pyflakes-vim'
-Bundle 'jnwhiteh/vim-golang.git'
-Bundle 'dgryski/vim-godef'
-Bundle 'nsf/gocode', {'rtp': 'vim/'}
-Bundle 'jiangmiao/auto-pairs.git'
-Bundle 'kien/ctrlp.vim'
-"Bundle 'terryma/vim-multiple-cursors'
-"Bundle 'AndrewRadev/splitjoin.vim'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate'
+Plugin 'majutsushi/tagbar'
+Plugin 'edsono/vim-matchit'
+"Plugin 'jimenezrick/vimerl'
+Plugin 'jonathanfilip/vim-lucius'
+Plugin 'tomasr/molokai'
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'jnwhiteh/vim-golang.git'
+Plugin 'dgryski/vim-godef'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'jiangmiao/auto-pairs.git'
+Plugin 'kien/ctrlp.vim'
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'AndrewRadev/splitjoin.vim'
 "
 " vim-scripts repos
-Bundle 'Indent-Guides'
-Bundle 'grep.vim'
-Bundle 'genutils'
-Bundle 'tagbar-phpctags'
-Bundle 'Marks-Browser'
+Plugin 'Indent-Guides'
+Plugin 'grep.vim'
+Plugin 'genutils'
+Plugin 'tagbar-phpctags'
+Plugin 'Marks-Browser'
 "
 " non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
+"Plugin 'git://git.wincent.com/command-t.git'
 " ...
 
-filetype plugin indent on     " required!
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" Put your non-Plugin stuff after this line
+
 " STEP: git submodule init; git submodule update
 
 " set encodings
@@ -68,6 +74,7 @@ let mapleader = ","
 "set guioptions=menu
 set guioptions=
 "set guifont=Source\ Code\ Pro:h13
+set guifont=Monaco:h13
 
 " set syntax
 syntax enable
