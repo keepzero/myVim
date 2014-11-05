@@ -30,6 +30,7 @@ Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'dgryski/vim-godef'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'jiangmiao/auto-pairs.git'
+Bundle 'kien/ctrlp.vim'
 "Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'AndrewRadev/splitjoin.vim'
 "
@@ -37,7 +38,6 @@ Bundle 'jiangmiao/auto-pairs.git'
 Bundle 'Indent-Guides'
 Bundle 'grep.vim'
 Bundle 'genutils'
-Bundle 'lookupfile'
 Bundle 'tagbar-phpctags'
 Bundle 'Marks-Browser'
 "
@@ -273,20 +273,13 @@ function! SetColorColumn()
     endif
 endfunction
 
-" ##### LookupFile #####
-let g:LookupFile_MinPatLength = 2               "At least 2 char to start search
-let g:LookupFile_PreserveLastPattern = 0        "Don't preserve last search
-let g:LookupFile_PreservePatternHistory = 1     "Save search history
-let g:LookupFile_AlwaysAcceptFirst = 1          "Enter match the first file
-let g:LookupFile_AllowNewFiles = 0              "not allow create new file if not match
-let g:LookupFile_TagExpr = '"./filenametags"'
-nnoremap <Leader>lf :LookupFile<CR>
-nnoremap <Leader>lb :LUBufs<CR>
-nnoremap <Leader>lw :LUWalk<CR>
-
 " ##### Marks Browser #####
 let marksCloseWhenSelected = 1
 nnoremap <Leader>mb :MarksBrowser<CR>
 
 " ##### Godef #####
 let g:godef_same_file_in_same_window = 1
+
+" ##### CtrlP #####
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
