@@ -27,6 +27,7 @@ Bundle 'jonathanfilip/vim-lucius'
 Bundle 'tomasr/molokai'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'jnwhiteh/vim-golang.git'
+Bundle 'dgryski/vim-godef'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'jiangmiao/auto-pairs.git'
 "Bundle 'terryma/vim-multiple-cursors'
@@ -35,7 +36,7 @@ Bundle 'jiangmiao/auto-pairs.git'
 " vim-scripts repos
 Bundle 'Indent-Guides'
 Bundle 'grep.vim'
-Bundle "genutils"
+Bundle 'genutils'
 Bundle 'lookupfile'
 Bundle 'tagbar-phpctags'
 Bundle 'Marks-Browser'
@@ -66,6 +67,7 @@ let mapleader = ","
 " gui settings
 "set guioptions=menu
 set guioptions=
+"set guifont=Source\ Code\ Pro:h13
 
 " set syntax
 syntax enable
@@ -112,6 +114,7 @@ nnoremap <space> za
 autocmd FileType python,erlang,java,sh set ts=4 sw=4 et sts=4
 autocmd FileType c,cpp set tabstop=8 shiftwidth=8 noexpandtab sts=8
 autocmd FileType go set tabstop=4 shiftwidth=4 noexpandtab sts=4
+autocmd FileType lua set tabstop=4 shiftwidth=4 noexpandtab sts=4
 autocmd FileType html,javascript,yaml,css set tabstop=2 shiftwidth=2 expandtab sts=2
 autocmd FileType text set ts=8 sts=8
 
@@ -284,3 +287,6 @@ nnoremap <Leader>lw :LUWalk<CR>
 " ##### Marks Browser #####
 let marksCloseWhenSelected = 1
 nnoremap <Leader>mb :MarksBrowser<CR>
+
+" ##### Godef #####
+let g:godef_same_file_in_same_window = 1
