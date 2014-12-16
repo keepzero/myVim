@@ -23,6 +23,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'edsono/vim-matchit'
 Plugin 'jiangmiao/auto-pairs.git'
 Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/Conque-Shell'
+Plugin 'bling/vim-airline'
 "Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'AndrewRadev/splitjoin.vim'
 "
@@ -149,7 +151,7 @@ nnoremap / /\v
 vnoremap / /\v
 set ignorecase
 set smartcase
-set gdefault
+"set gdefault
 set incsearch
 set showmatch
 set hlsearch
@@ -177,7 +179,9 @@ nnoremap j gj
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-nnoremap ; :
+"nnoremap ; :
+inoremap <C-s> <Esc>:w<CR>a
+nnoremap <C-s> :w<CR>
 
 " Emacs bind
 inoremap <C-a> <Home>
@@ -186,7 +190,7 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-w> <Esc>dbcl
 inoremap <C-u> <Esc>d0cl
-inoremap <C-k> <Esc>lC
+"inoremap <C-k> <Esc>lC " not work ?
 inoremap <C-d> <Esc>ls
 
 " shortcuts with Leader key
@@ -205,8 +209,8 @@ noremap <C-H>     <C-W>h
 noremap <C-L>     <C-W>l
 
 " omni complete
-set completeopt=longest,menuone,preview
-set completeopt-=longest
+set completeopt=longest,menuone
+"set completeopt+=preview
 inoremap <expr> <CR>       pumvisible()?"\<C-y>":"\<CR>"
 inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
 inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
@@ -285,11 +289,12 @@ nnoremap <Leader>mb :MarksBrowser<CR>
 
 " ##### Godef #####
 let g:godef_same_file_in_same_window = 1
+let g:godef_split = 0
 
 " ##### CtrlP #####
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " ##### vim-go #####
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
 let g:go_snippet_engine = "snipmate"
