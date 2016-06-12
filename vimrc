@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Plugins here:
 "
@@ -23,17 +23,16 @@ Plugin 'majutsushi/tagbar'
 Plugin 'edsono/vim-matchit'
 Plugin 'jiangmiao/auto-pairs.git'
 Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/Conque-Shell'
+"Plugin 'vim-scripts/Conque-Shell'
 Plugin 'bling/vim-airline'
 "Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'AndrewRadev/splitjoin.vim'
 "
 " langs
 "Plugin 'jimenezrick/vimerl'
-Plugin 'kevinw/pyflakes-vim'
+"Plugin 'kevinw/pyflakes-vim'
+Plugin 'scrooloose/syntastic'
 Plugin 'fatih/vim-go'
-Plugin 'dgryski/vim-godef'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
 "
 " vim-scripts repos
 Plugin 'Indent-Guides'
